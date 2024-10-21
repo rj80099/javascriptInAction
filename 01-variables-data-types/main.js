@@ -296,7 +296,7 @@ console.log(x2,typeof x2);
  x3 = s.split(' ') //split the string based on space
  
  console.log(x3);
-*/
+
 
  //video 12: Capitalise Challenge
  const myString = 'developer';
@@ -358,3 +358,111 @@ f= Math.random(); //default number from 0 - 1
 f = Math.floor(Math.random() *10 +1 ); // number from 1-10
 
 console.log(f);
+
+
+//video 15: Number challenge
+
+let x,y;
+
+x = Math.floor(Math.random()*100 + 1);
+y= Math.floor(Math.random()*50 + 1);
+
+//Get sum
+const sum = x + y;
+const sumOutput = `${x}+${y} = ${sum}`;
+console.log(sumOutput);
+
+//Get Product
+const prod = x * y;
+const prodOutput = `${x} X ${y} = ${prod}`;
+console.log(prodOutput);
+
+//Get difference 
+const diff = x - y;
+const diffOutput = `${x} - ${y} = ${diff}`;
+console.log(diffOutput);
+*/
+//video 16: Date & Times
+
+let d;
+
+d = new Date();
+
+console.log(d);
+
+console.log(typeof d); //its an object
+
+d = d.toString();
+
+console.log(typeof d); //change it to string type
+
+d = new Date(2021, 0, 10, 12, 30, 0); //passing number as an argument
+console.log(d);
+
+d = new Date("2021-07-10T16:30:00"); //passing string as an argument
+console.log(d);
+
+d = new Date("07/10/2021 12:30:00"); //passing string as an argument
+console.log(d);
+
+//timelaps express in millisecond
+
+d = Date.now(); //return timestamp since 1970 till date
+console.log(d);
+
+d = new Date("07-10-2022 14:30:00"); //return timestamp since 1970 till
+d = d.getTime();
+d = d.valueOf();
+console.log(d);
+
+//create date object from timestamp
+d = new Date(4575636848); //return timestamp since 1970 till date
+console.log(d);
+
+d = Math.floor(Date.now() / 1000); // timestamp in seconds
+console.log(d);
+
+//video 17: Date Method
+
+let t;
+let a = new Date(); //initialing date object into a
+
+t = a.toString();
+t = a.valueOf();
+
+//get specific part of date
+t = a.getFullYear();
+
+t = a.getMonth() + 1;
+
+t = a.getDate(); //day of the month
+
+t = a.getDay(); //day of the week
+
+t = a.getHours();
+
+t = a.getMinutes();
+
+t = a.getSeconds();
+
+t = a.getMilliseconds();
+
+t = `${a.getFullYear()}-${a.getMonth() + 1}-${a.getDate()}`; //will be using this in real project
+
+//here we are calling an api then we are able to get date
+t = Intl.DateTimeFormat("en-US").format(a);
+
+t = Intl.DateTimeFormat("default", { month: "long" }).format(a);
+
+//we can use  method on date object as well
+t = a.toLocaleDateString("default", {
+  weekday: "long",
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
+  second: "numeric",
+  timeZone: "America/New_York",
+});
+console.log(t);
