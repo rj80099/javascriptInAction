@@ -190,7 +190,7 @@ const person2  = {
 x= person2['first name'];
 console.log(x);
 
-//Video 7: Oobeject spread operator and method
+//Video 7: Object spread operator and method
 
 
 //Initialise using object literals
@@ -301,3 +301,98 @@ const [first, second, ...rest] = number1;
 console.log(first, second, rest);
 
 
+//video 09: JSON - Javascript Object Notation
+//Make todo.json 
+/*
+1. Property and key should be double quote
+[
+{
+"id": "1",
+"title":"take out trash"
+}
+
+]
+
+*/
+
+
+const post = {
+    id :1,
+    title: 'post One',
+    body:'This is the body',
+};
+
+//convert to JSON string
+const str = JSON.stringify(post); //
+console.log(str);
+
+//Parse JSON
+const obj = JSON.parse(str);
+console.log(str);
+
+const posts = [
+    {
+        id :1,
+        title: 'post One',
+    body:'This is the body',
+    },
+    {
+        id :1,
+        title: 'post One',
+        body:'This is the body',
+    },
+];
+
+const str2 = JSON.stringify(post);
+console.log(str2);
+
+//to access any specfic property you need to first parse 
+
+
+//Video 10: Challenge
+const library = [
+    {
+        titles: 'The Road Ahead',
+        author:'Bill Gates',
+        status: {
+            own: true,
+            reading: false,
+            read: false
+        }
+    },
+    {
+        titles: 'Steave jobs',
+        author:'Walter Isaacson',
+        status: {
+            own: true,
+            reading: false,
+            read: false
+        }
+    },
+    {
+        titles: 'Mockinjay',
+        author:'Suzanne Collin',
+        status: {
+            own: true,
+            reading: false,
+            read: false
+        }
+    }
+];
+console.log(library)
+
+//step2 change the status of read for all books to true
+library[0].status.read = true;
+library[1].status.read = true;
+library[2].status.read = true;
+console.log(library)
+
+//step3 destructure the title from the first book and rename the variable to firstbook
+const {titles: firstbook} = library[0];
+console.log(library)
+
+
+//step3 : Turn library object to JSON
+
+const libraryJSON = JSON.stringify(library)
+console.log(library)
